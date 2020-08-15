@@ -27,7 +27,7 @@
         </el-col>
         <el-col :span="22">
           <el-cascader
-            placeholder=""
+            placeholder="请选择"
             :options="options"
             @change="handleChange"
             filterable></el-cascader>
@@ -353,8 +353,14 @@ import vEditor from '@/components/ue/ue.vue';
         for (var row in list) {
           var tmp = {};
 
+          // 封装为map对象
+          var specMap = {};
+          for (var col = 0; col < this.skuList['dataColumn'].length; col++) {
+            specMap[this.skuList['dataColumn'][col]] = list[row][col];
+          }
+
           this.$set(tmp, 'sn', this.sn);// 货号
-          this.$set(tmp, 'spec', list[row].join(','));// 规格信息
+          this.$set(tmp, 'spec', JSON.stringify(specMap));// 规格信息
           this.$set(tmp, 'price', this.price[row]);
           this.$set(tmp, 'num', this.num[row]);
           this.$set(tmp, 'alertNum', this.alertNum[row]);

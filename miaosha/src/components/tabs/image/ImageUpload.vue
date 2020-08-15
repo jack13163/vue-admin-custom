@@ -96,6 +96,9 @@
             type: 'success',
             message: '保存相册成功!'
           });
+
+          // 跳转到列表Tab页
+          this.$emit('tabChanged', 'images');
           const data = response.data.data;
           console.log(data);
         }, e => {

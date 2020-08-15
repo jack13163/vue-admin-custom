@@ -213,7 +213,6 @@
           this.pages = data.pages;
           this.pageNo = data.pageNum;
           this.total = data.total;
-          console.log(this.tableData);
         }, e => {
           console.log(e)
         })

@@ -27,17 +27,35 @@
         <i class="el-icon-orange"></i>
         <span>分类管理</span>
       </template>
-      <el-menu-item index="3-1" @click="nav_clicked('images')">图片列表</el-menu-item>
-      <el-menu-item index="3-1" @click="nav_clicked('image_upload')">添加图片</el-menu-item>
+      <el-menu-item index="4-1" @click="nav_clicked('category_list')">分类列表</el-menu-item>
+      <el-menu-item index="4-1" @click="nav_clicked('category_input')">添加分类</el-menu-item>
     </el-submenu>
 
-    <el-submenu index="4">
+    <el-submenu index="5">
+      <template slot="title">
+        <i class="el-icon-menu"></i>
+        <span>品牌管理</span>
+      </template>
+      <el-menu-item index="5-1" @click="nav_clicked('brand_list')">品牌列表</el-menu-item>
+      <el-menu-item index="5-1" @click="nav_clicked('brand_input')">添加品牌</el-menu-item>
+    </el-submenu>
+
+    <el-submenu index="6">
+      <template slot="title">
+        <i class="el-icon-s-check"></i>
+        <span>模板管理</span>
+      </template>
+      <el-menu-item index="6-1" @click="nav_clicked('template_list')">模板列表</el-menu-item>
+      <el-menu-item index="6-1" @click="nav_clicked('template_input')">添加模板</el-menu-item>
+    </el-submenu>
+
+    <el-submenu index="7">
       <template slot="title">
         <i class="el-icon-guide"></i>
         <span>相册管理</span>
       </template>
-      <el-menu-item index="4-1" @click="nav_clicked('category_list')">分类列表</el-menu-item>
-      <el-menu-item index="4-1" @click="nav_clicked('category_input')">添加分类</el-menu-item>
+      <el-menu-item index="7-1" @click="nav_clicked('images')">图片列表</el-menu-item>
+      <el-menu-item index="7-1" @click="nav_clicked('image_upload')">添加图片</el-menu-item>
     </el-submenu>
   </el-menu>
 </el-row>

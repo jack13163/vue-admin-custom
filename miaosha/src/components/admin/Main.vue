@@ -28,6 +28,10 @@ import imageUpload from '@/components/tabs/image/ImageUpload.vue'
 import imageList from '@/components/tabs/image/ImageList.vue'
 import categoryInput from '@/components/tabs/category/CategoryInput.vue'
 import categoryList from '@/components/tabs/category/CategoryList.vue'
+import brandInput from '@/components/tabs/brand/BrandInput.vue'
+import brandList from '@/components/tabs/brand/BrandList.vue'
+import templateInput from '@/components/tabs/template/TemplateInput.vue'
+import templateList from '@/components/tabs/template/TemplateList.vue'
 
 export default {
     components: {
@@ -37,7 +41,11 @@ export default {
       imageUpload,
       imageList,
       categoryInput,
-      categoryList
+      categoryList,
+      brandInput,
+      brandList,
+      templateInput,
+      templateList
     },
     props: {
       data: {}
@@ -90,14 +98,42 @@ export default {
           this.tab_data.editableTabs.push({
             title: '分类列表',
             name: targetName,
-            content: 'categoryInput'
+            content: 'categoryList'
           });
           this.tab_data.editableTabsValue = targetName;
         } else if (targetName === 'category_input') {
           this.tab_data.editableTabs.push({
             title: '添加分类',
             name: targetName,
-            content: 'categoryList'
+            content: 'categoryInput'
+          });
+          this.tab_data.editableTabsValue = targetName;
+        } else if (targetName === 'brand_list') {
+          this.tab_data.editableTabs.push({
+            title: '品牌列表',
+            name: targetName,
+            content: 'brandList'
+          });
+          this.tab_data.editableTabsValue = targetName;
+        } else if (targetName === 'brand_input') {
+          this.tab_data.editableTabs.push({
+            title: '添加品牌',
+            name: targetName,
+            content: 'brandInput'
+          });
+          this.tab_data.editableTabsValue = targetName;
+        } else if (targetName === 'template_list') {
+          this.tab_data.editableTabs.push({
+            title: '模板列表',
+            name: targetName,
+            content: 'templateList'
+          });
+          this.tab_data.editableTabsValue = targetName;
+        } else if (targetName === 'template_input') {
+          this.tab_data.editableTabs.push({
+            title: '添加模板',
+            name: targetName,
+            content: 'templateInput'
           });
           this.tab_data.editableTabsValue = targetName;
         }
