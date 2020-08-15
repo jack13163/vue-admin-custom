@@ -8,6 +8,7 @@ import md5 from 'js-md5'
 import VueCookies from 'vue-cookies'
 import AJAX from './util/ajaxfun.js'
 import Storage from './util/storagefun.js'
+import UE from 'vue-quill-editor'
 
 Vue.use(ElementUI)
 
@@ -16,6 +17,9 @@ Vue.use(AJAX)
 Vue.use(VueCookies)
 Vue.use(resource)
 Vue.use(Storage)
+
+// 富文本编辑器
+Vue.use(UE)
 
 // 定义全局变量
 Vue.prototype.$md5 = md5

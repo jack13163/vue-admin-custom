@@ -8,7 +8,7 @@
         <left v-on:navClicked="addTab"></left>
       </el-aside>
       <el-main class="main_right">
-        <right :data="tabData" v-on:tabDeleted="deleteTab" ref="tagFlag"></right>
+        <right :data="tabData" v-on:tabDeleted="deleteTab" v-on:tabChanged="changeTab" ref="tagFlag"></right>
       </el-main>
     </el-container>
   </el-container>
@@ -61,23 +61,21 @@ export default {
     return {
       // 需要传递给right子组件的数据
       tabData: {
-        editableTabsValue: 'index',
-        editableTabs: [{
-          title: '首页',
-          name: 'index',
-          content: 'goods'
-        }]
+        editableTabsValue: '',
+        editableTabs: []
       }
     }
   },
   methods: {
     // Nav组件事件事件监听：点击导航时会触发该方法，添加选项卡
     addTab(targetName) {
-      // 判断是否已经打开，若已经打开，则不要重复打开
-      let tmp = this.tabData.editableTabs.filter(e => e.name === targetName);
-      if (tmp.length > 0) {
-        this.tabData.editableTabsValue = targetName;
-        return;
+      if (this.tabData.editableTabs.length > 0) {
+        // 判断是否已经打开，若已经打开，则不要重复打开
+        let tmp = this.tabData.editableTabs.filter(e => e.name === targetName);
+        if (tmp.length > 0) {
+          this.tabData.editableTabsValue = targetName;
+          return;
+        }
       }
       // 为了将所有子组件的调用集中在Main组件中完成，因此，这里需要调用Main组件中的addTab方法，实现选项卡的添加
       this.$refs.tagFlag.addTab(targetName);
@@ -99,7 +97,8 @@ export default {
     },
     // Main组件事件事件监听：选中的选项卡发生变化
     changeTab(targetName) {
-      this.tabData.editableTabsValue = targetName;
+      // 已经打开的直接定位到当前页，没有打开的直接打开
+      this.addTab(targetName);
     }
   }
 }

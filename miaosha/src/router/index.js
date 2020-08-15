@@ -1,6 +1,5 @@
 import Router from 'vue-router'
 import Login from '@/components/Login.vue'
-import Goods from '@/components/Goods.vue'
 import Vue from 'vue'
 import Layout from '@/components/admin/Layout.vue'
 
@@ -9,27 +8,23 @@ Vue.use(Router)
 
 // 定义路由规则
 const router = new Router({
-  routes: [{
-    path: '/',
-    name: 'goods',
-    component: Goods
-  },
+  routes: [
   {
     path: '/login',
     name: 'login',
     component: Login
   },
   {
-    path: '/admin',
-    name: 'admin',
+    path: '/',
+    name: 'index',
     component: Layout
   },
   {
-    path: '/goods',
-    name: 'goods',
-    component: Goods,
+    path: '/admin',
+    name: 'admin',
+    component: Layout,
     meta: {
-      requiresAuth: true// 标记需要登陆才能访问
+      // requiresAuth: true// 标记需要登陆才能访问
     }
   }]
 })

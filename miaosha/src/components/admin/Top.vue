@@ -4,7 +4,7 @@
       <img src="../../assets/logo2.png" />
     </el-aside>
     <el-main class="header_right">
-      <el-avatar icon="el-icon-user-solid" class="user_acvator"></el-avatar>
+      <el-avatar :src="avatarUrl" class="user_acvator"></el-avatar>
     </el-main>
   </el-container>
 </template>
@@ -40,5 +40,11 @@
 </style>
 
 <script>
-
+export default {
+  data() {
+    return {
+      avatarUrl: require('../../assets/avatar.png')
+    }
+  }
+}
 </script>

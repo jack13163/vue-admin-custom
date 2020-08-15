@@ -18,7 +18,26 @@
         <i class="el-icon-goods"></i>
         <span>商品管理</span>
       </template>
-      <el-menu-item index="2-1" @click="nav_clicked('goods')">编辑商品</el-menu-item>
+      <el-menu-item index="2-1" @click="nav_clicked('goods')">商品列表</el-menu-item>
+      <el-menu-item index="2-1" @click="nav_clicked('goods_input')">添加商品</el-menu-item>
+    </el-submenu>
+
+    <el-submenu index="3">
+      <template slot="title">
+        <i class="el-icon-orange"></i>
+        <span>分类管理</span>
+      </template>
+      <el-menu-item index="3-1" @click="nav_clicked('images')">图片列表</el-menu-item>
+      <el-menu-item index="3-1" @click="nav_clicked('image_upload')">添加图片</el-menu-item>
+    </el-submenu>
+
+    <el-submenu index="4">
+      <template slot="title">
+        <i class="el-icon-guide"></i>
+        <span>相册管理</span>
+      </template>
+      <el-menu-item index="4-1" @click="nav_clicked('category_list')">分类列表</el-menu-item>
+      <el-menu-item index="4-1" @click="nav_clicked('category_input')">添加分类</el-menu-item>
     </el-submenu>
   </el-menu>
 </el-row>
