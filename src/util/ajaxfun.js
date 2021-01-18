@@ -6,7 +6,7 @@ export default {
       // 跨域携带cookie
       Vue.http.get(url, { withCredentials: true }).then((response) => {
           // 可以在这里判断ajax请求的code是否为95101、95102和95103，然后回到登录页
-          let code = response.data.code; 
+          let code = response.data.code;
           console.log(code)
           if (code !== '95101' && code !== '95102' && code !== '95103') {
              successCallback(response);
