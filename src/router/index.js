@@ -8,8 +8,7 @@ Vue.use(Router)
 
 // 定义路由规则
 const router = new Router({
-  routes: [
-  {
+  routes: [{
     path: '/login',
     name: 'login',
     component: Login
