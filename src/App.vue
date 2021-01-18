@@ -5,7 +5,7 @@
 </template>
 
 <style scoped>
-html, body {
+html, body {  
     height: 100%;
     margin: 0px;
     background:#000
