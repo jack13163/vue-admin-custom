@@ -57,6 +57,15 @@
       <el-menu-item index="7-1" @click="nav_clicked('images')">图片列表</el-menu-item>
       <el-menu-item index="7-1" @click="nav_clicked('image_upload')">添加图片</el-menu-item>
     </el-submenu>
+
+    <el-submenu index="8">
+      <template slot="title">
+        <i class="el-icon-tickets"></i>
+        <span>测试Mock数据</span>
+      </template>
+      <el-menu-item index="7-1" @click="nav_clicked('mock_test_get')">测试Get请求</el-menu-item>
+      <el-menu-item index="7-1" @click="nav_clicked('mock_test_post')">测试Post请求</el-menu-item>
+    </el-submenu>
   </el-menu>
 </el-row>
 </template>

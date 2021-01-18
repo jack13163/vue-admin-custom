@@ -10,6 +10,9 @@ import AJAX from './util/ajaxfun.js'
 import Storage from './util/storagefun.js'
 import UE from 'vue-quill-editor'
 
+import '../config/axois'
+import './mock/mock'
+
 Vue.use(ElementUI)
 
 // 封装了可以携带Cookie的GET和POST方法

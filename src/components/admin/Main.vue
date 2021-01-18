@@ -32,6 +32,8 @@ import brandInput from '@/components/tabs/brand/BrandInput.vue'
 import brandList from '@/components/tabs/brand/BrandList.vue'
 import templateInput from '@/components/tabs/template/TemplateInput.vue'
 import templateList from '@/components/tabs/template/TemplateList.vue'
+import getMock from '@/components/tabs/mock/GetMock.vue'
+import postMock from '@/components/tabs/mock/PostMock.vue'
 
 export default {
     components: {
@@ -45,7 +47,9 @@ export default {
       brandInput,
       brandList,
       templateInput,
-      templateList
+      templateList,
+      getMock,
+      postMock
     },
     props: {
       data: {}
@@ -134,6 +138,20 @@ export default {
             title: '添加模板',
             name: targetName,
             content: 'templateInput'
+          });
+          this.tab_data.editableTabsValue = targetName;
+        } else if (targetName === 'mock_test_get') {
+          this.tab_data.editableTabs.push({
+            title: '测试Get',
+            name: targetName,
+            content: 'getMock'
+          });
+          this.tab_data.editableTabsValue = targetName;
+        } else if (targetName === 'mock_test_post') {
+          this.tab_data.editableTabs.push({
+            title: '测试Post',
+            name: targetName,
+            content: 'postMock'
           });
           this.tab_data.editableTabsValue = targetName;
         }
