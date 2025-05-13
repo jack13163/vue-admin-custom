@@ -2,6 +2,7 @@ import Router from 'vue-router'
 import Login from '@/components/Login.vue'
 import Vue from 'vue'
 import Layout from '@/components/admin/Layout.vue'
+import TreeDemo from '@/components/demo/TreeDemo.vue'
 
 // 注册路由器
 Vue.use(Router)
@@ -25,6 +26,11 @@ const router = new Router({
     meta: {
       // requiresAuth: true// 标记需要登陆才能访问
     }
+  },
+  {
+    path: '/tree-demo',
+    name: 'TreeDemo',
+    component: TreeDemo
   }]
 })
 
